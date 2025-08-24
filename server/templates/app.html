@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hax Home Price Predictor</h1>
+        <p>Enter details below to predict home price (in Lakhs):</p>
+
+        <div class="form-group">
+            <label>Total Square Feet</label>
+            <input type="text" id="uiSqft" class="form-control" placeholder="Enter total sqft">
+        </div>
+
+        <div class="form-group">
+            <label>Location</label>
+            <select id="uiLocations" class="form-control"></select>
+        </div>
+
+        <div class="form-group">
+            <label>BHK</label>
+            <div class="radio-group">
+                <label><input type="radio" name="uiBHK" value="1"> 1</label>
+                <label><input type="radio" name="uiBHK" value="2"> 2</label>
+                <label><input type="radio" name="uiBHK" value="3"> 3</label>
+                <label><input type="radio" name="uiBHK" value="4"> 4</label>
+                <label><input type="radio" name="uiBHK" value="5"> 5</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Bathrooms</label>
+            <div class="radio-group">
+                <label><input type="radio" name="uiBathrooms" value="1"> 1</label>
+                <label><input type="radio" name="uiBathrooms" value="2"> 2</label>
+                <label><input type="radio" name="uiBathrooms" value="3"> 3</label>
+                <label><input type="radio" name="uiBathrooms" value="4"> 4</label>
+                <label><input type="radio" name="uiBathrooms" value="5"> 5</label>
+            </div>
+        </div>
+
+        <button class="btn" onclick="onClickedEstimatePrice()">Predict Price</button>
+
+        <div id="uiEstimatedPrice" class="result">
+            <h2>Predicted Price: --</h2>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
